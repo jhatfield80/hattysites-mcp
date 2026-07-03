@@ -1,0 +1,58 @@
+# Hatty.ai Client Registry
+# Add each client below. Credentials are stored separately in credentials/
+# Each client needs: {client_id}_google.json and {client_id}_meta.json
+
+clients:
+
+  # ============================================================
+  # EXAMPLE CLIENT - Copy this block for each new client
+  # ============================================================
+  - id: example-client
+    name: "Example Client Inc."
+    tier: premium  # basic | pro | premium
+    industry: ecommerce  # ecommerce | leadgen | saas | local | agency
+    active: true
+
+    # --- Google Ads ---
+    google_customer_id: "123-456-7890"  # Format: XXX-XXX-XXXX
+
+    # --- Meta Ads ---
+    meta_ad_account_id: "act_123456789"
+
+    # --- Google Analytics 4 ---
+    ga4_property_id: "properties/123456789"
+
+    # --- Google Search Console ---
+    search_console_site_url: "https://example.com"
+
+    # --- Performance Targets ---
+    target_cpa: 50.00      # Target cost per acquisition in USD
+    target_roas: 4.0       # Target return on ad spend (4.0 = 400%)
+    monthly_budget: 10000  # Total monthly ad spend budget in USD
+
+    # --- Report Delivery ---
+    delivery:
+      email: "marketing@example.com"
+      # slack_webhook: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+      # webhook_url: "https://example.com/hatty-webhook"
+
+    # --- Timezone ---
+    timezone: "America/Chicago"
+
+  # ============================================================
+  # Add more clients below
+  # ============================================================
+  # - id: another-client
+  #   name: "Another Client LLC"
+  #   tier: pro
+  #   industry: leadgen
+  #   active: true
+  #   google_customer_id: "987-654-3210"
+  #   meta_ad_account_id: "act_987654321"
+  #   ga4_property_id: "properties/987654321"
+  #   target_cpa: 75.00
+  #   target_roas: 3.0
+  #   monthly_budget: 5000
+  #   delivery:
+  #     email: "team@anotherclient.com"
+  #   timezone: "America/New_York"
