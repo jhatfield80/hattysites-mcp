@@ -1,0 +1,36 @@
+# Hatty.ai MCP Server - Python Dependencies
+
+# MCP Protocol
+mcp>=1.0.0
+
+# API Clients
+google-ads>=24.0.0
+google-auth>=2.23.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.1.1
+httpx>=0.27.0
+
+# Web Framework (MCP server)
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+starlette>=0.37.0
+
+# Anthropic (Claude agent)
+anthropic>=0.30.0
+
+# Scheduler (agentic orchestrator)
+apscheduler>=3.10.4
+
+# Configuration
+pyyaml>=6.0.1
+python-dotenv>=1.0.1
+
+# Email delivery
+sendgrid>=6.11.0
+
+# Data processing
+pandas>=2.2.0
+
+# Utilities
+rich>=13.7.0
+typer>=0.12.0
