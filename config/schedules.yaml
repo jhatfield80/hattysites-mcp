@@ -1,0 +1,95 @@
+# Hatty.ai Automation Schedules
+# Cron format: minute hour day-of-month month day-of-week
+# All times are in UTC. Adjust based on your client timezones.
+# tiers: list of tiers that receive this skill, or "all" for everyone
+
+schedules:
+
+  # Monday 6am UTC - Google Ads Weekly Audit
+  - skill: 01-google-ads-weekly-audit
+    cron: "0 6 * * 1"
+    tiers:
+      - pro
+      - premium
+    description: "Flags wasted spend, QS issues, and structural problems in Google Ads"
+
+  # Monday 6am UTC - Meta Creative Fatigue Detector
+  - skill: 02-meta-creative-fatigue
+    cron: "0 6 * * 1"
+    tiers:
+      - pro
+      - premium
+    description: "Detects fatigued Meta ad creatives via CTR/frequency/CPM signals"
+
+  # Monday 7am UTC - Cross-Platform ROAS Analyzer
+  - skill: 03-cross-platform-roas
+    cron: "0 7 * * 1"
+    tiers:
+      - premium
+    description: "Compares Google vs Meta ROAS and recommends budget shifts"
+
+  # Monday 7am UTC - Search Terms Cleanup
+  - skill: 04-search-terms-cleanup
+    cron: "0 7 * * 1"
+    tiers:
+      - pro
+      - premium
+    description: "Mines wasted search terms and generates negative keyword lists"
+
+  # Monday 8am UTC - Weekly Executive Report (ALL PAYING TIERS)
+  - skill: 08-weekly-exec-report
+    cron: "0 8 * * 1"
+    tiers:
+      - basic
+      - pro
+      - premium
+    description: "CEO/CMO-ready one-page weekly performance summary"
+
+  # Tuesday 6am UTC - Quality Score Optimizer
+  - skill: 05-quality-score-optimizer
+    cron: "0 6 * * 2"
+    tiers:
+      - pro
+      - premium
+    description: "Identifies low QS keywords and provides specific fixes with $ savings"
+
+  # Tuesday 7am UTC - Audience Overlap Detector
+  - skill: 06-audience-overlap-detector
+    cron: "0 7 * * 2"
+    tiers:
+      - premium
+    description: "Finds Meta audience overlap causing internal auction competition"
+
+  # Wednesday 6am UTC - Budget Reallocator
+  - skill: 07-budget-reallocator
+    cron: "0 6 * * 3"
+    tiers:
+      - premium
+    description: "Recommends budget shifts from underperformers to high-ROAS campaigns"
+
+  # Thursday 6am UTC - Conversion Tracking Validator
+  - skill: 09-conversion-tracking-validator
+    cron: "0 6 * * 4"
+    tiers:
+      - pro
+      - premium
+    description: "Validates pixel health, CAPI, GA4 imports, and tracking accuracy"
+
+  # Thursday 7am UTC - Landing Page Checker
+  - skill: 10-landing-page-checker
+    cron: "0 7 * * 4"
+    tiers:
+      - premium
+    description: "Analyzes landing pages for speed, UX, and conversion issues"
+
+# Global settings
+settings:
+  # Maximum concurrent skill runs (avoid API rate limits)
+  max_concurrent_clients: 5
+
+  # Retry failed runs after N minutes
+  retry_delay_minutes: 30
+  max_retries: 2
+
+  # Notification if orchestrator fails
+  alert_email: "alerts@hattysites.com"
